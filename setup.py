@@ -22,14 +22,19 @@ setup(
     author_email=author_email,
     url=liquidluck.__homepage__,
     packages=['liquidluck', 'liquidluck.writers', 'liquidluck.readers',
-              'liquidluck.tools'],
+              'liquidluck.tools' ],
     description='A lightweight static weblog generator',
     long_description=open('README.rst').read(),
     license='BSD License',
+    
     entry_points={
         'console_scripts': ['liquidluck= liquidluck.cli:main'],
     },
     install_requires=install_requires,
+    tests_require=(
+         'nose',
+       ),
+    test_suite='nose.collector',
     include_package_data=True,
     classifiers=[
         'Development Status :: 4 - Beta',
